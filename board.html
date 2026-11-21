@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOGTRACK Leaderboard</title>
+<link rel="stylesheet" href="/src/styles/board.css">
+</head>
+<body>
+<main class="stage">
+  <header class="head">
+    <h1 class="title">FOGTRACK</h1>
+    <div class="live" id="live" data-state="idle" aria-live="polite">
+      <span class="live-dot"></span>
+      <span class="live-text" id="live-text">Next player up</span>
+      <span class="ticks" id="ticks" aria-hidden="true"></span>
+    </div>
+  </header>
+  <section class="boards">
+    <article class="board" aria-labelledby="h-today">
+      <h2 class="board-title" id="h-today">Today</h2>
+      <ol class="rows" id="list-today"></ol>
+    </article>
+    <article class="board" aria-labelledby="h-all">
+      <h2 class="board-title" id="h-all">All time</h2>
+      <ol class="rows" id="list-all"></ol>
+    </article>
+  </section>
+</main>
+<script type="module" src="/src/board/main.ts"></script>
+</body>
+</html>

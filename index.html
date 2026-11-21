@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Fogtrack</title>
+  <link rel="stylesheet" href="/src/styles/game.css" />
+</head>
+<body draggable="false">
+  <main id="stage">
+    <canvas id="field" data-testid="field" draggable="false"></canvas>
+
+    <section id="s-attract" class="screen" data-testid="screen-attract" data-act="start">
+      <div class="card">
+        <h1>Fogtrack</h1>
+        <p class="pitch">Watch the dots. The fog drops. Tap where they are now.</p>
+        <ol class="steps">
+          <li><span class="ic i-watch"><i></i></span><b>1</b> Watch</li>
+          <li><span class="ic i-fog"><i></i></span><b>2</b> Fog</li>
+          <li><span class="ic i-tap"><i></i></span><b>3</b> Tap</li>
+        </ol>
+        <p class="sub">Dots turn, stop or double back at the posts. Train the pro skill of tracking enemies you can no longer see.</p>
+        <button type="button" class="btn go" data-testid="start" data-act="start">Tap to start</button>
+      </div>
+    </section>
+
+    <section id="s-countdown" class="screen" data-testid="screen-countdown">
+      <div id="count" class="count" aria-live="polite">3</div>
+    </section>
+
+    <section id="s-play" class="screen play" data-testid="screen-show">
+      <header class="hud">
+        <span id="h-round" class="mono">ROUND 1 / 8</span>
+        <span id="h-msg" class="msg">Watch the orange</span>
+        <span id="h-total" class="mono">0</span>
+      </header>
+      <div class="timer"><i id="h-timer"></i></div>
+    </section>
+
+    <section id="s-score" class="screen solid" data-testid="screen-score">
+      <div class="panel">
+        <div class="tot">
+          <span class="lab mono">TOTAL</span>
+          <b id="total" data-testid="total">0</b>
+          <span class="mono dim">OUT OF 8,000</span>
+          <span id="rank" class="rank mono" data-testid="rank"></span>
+          <span id="seedlab" class="mono dim"></span>
+        </div>
+        <div class="bars">
+          <div class="bar"><span class="lab">Track</span><div class="rail"><i id="b-track"></i></div><span id="v-track" class="mono">0 / 100</span></div>
+          <div class="bar"><span class="lab">Read</span><div class="rail"><i id="b-read" class="alt"></i></div><span id="v-read" class="mono">0 / 100</span></div>
+          <p class="hint">Track: how near your pins landed. Read: how far you beat a straight-line guess. Skill trained: tracking what you can no longer see.</p>
+        </div>
+        <div id="strip" class="strip"></div>
+        <button type="button" class="btn go" data-testid="continue" data-act="continue">Enter initials</button>
+      </div>
+    </section>
+
+    <section id="s-initials" class="screen solid" data-testid="screen-initials">
+      <div class="panel narrow">
+        <p class="lab mono">YOUR INITIALS</p>
+        <div id="slots" class="slots"><span></span><span></span><span></span></div>
+        <div id="keys" class="keys"></div>
+        <div class="row">
+          <button type="button" class="btn ghost" data-testid="initials-skip" data-act="skip">Skip</button>
+          <button type="button" class="btn go" data-testid="initials-done" data-act="done" disabled>Done</button>
+        </div>
+      </div>
+    </section>
+
+    <aside id="handoff" class="handoff" aria-live="polite">
+      <b>Next player</b>
+      <span>Step up. Watch. Fog. Tap.</span>
+    </aside>
+    <p id="note" class="note" role="status"></p>
+  </main>
+  <script type="module" src="/src/game/main.ts"></script>
+</body>
+</html>
