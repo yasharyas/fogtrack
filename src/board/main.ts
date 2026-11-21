@@ -79,6 +79,7 @@ function live(round: number | null) {
   const on = round !== null;
   if (on) stale = window.setTimeout(() => live(null), STALE_MS); // game closed mid-round: drop stale state
   $('live').dataset.state = on ? 'playing' : 'idle';
+  $('howto').dataset.on = on ? '0' : '1';
   $('live-text').textContent = on ? `Now playing - round ${round + 1} of ${ROUNDS}` : 'Next player up';
   Array.from($("ticks").children).forEach((t, i) => t.classList.toggle('on', on && i <= round));
 }
@@ -122,7 +123,7 @@ function closeOp() {
 function openOp() {
   closeOp();
   opTimer = window.setTimeout(closeOp, OP_MS);
-  const msg = el('p', 'op-msg', `${loadScores().length} entries stored.`);
+  const msg = el('p', 'op-msg', `${loadScores().length} ${loadScores().length === 1 ? "entry" : "entries"} stored.`);
   const btns: HTMLButtonElement[] = [];
   const add = (label: string, confirmLabel: string | null, run: () => string) => {
     const b = el('button', 'op-btn', label) as HTMLButtonElement;

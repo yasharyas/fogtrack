@@ -211,12 +211,13 @@ function finish() {
   const better = rankScores(loadScores(), 'today', Infinity, seed).filter((e) => e.total > result!.total).length;
   txt('rank', `${nth(better + 1)} today`);
   const strip = $('strip'); strip.replaceChildren();
+  const top = Math.max(300, ...result.rounds.map((r) => r.points)); // bars scale to the best round, never below 300
   for (const r of result.rounds) {
     const d = document.createElement('div'), c = document.createElement('div'), i = document.createElement('i');
     const s = document.createElement('span'), n = document.createElement('b'), k = document.createElement('small');
-    i.style.height = `${Math.max(2, (r.points / 1000) * 90)}px`; c.className = 'col'; c.append(i);
+    i.style.height = r.points > 0 ? `${Math.max(8, (r.points / top) * 100)}%` : "8px"; i.className = r.points > 0 ? "" : "zero"; c.className = 'col'; c.append(i);
     s.textContent = String(r.points); n.textContent = `R${r.index + 1}`; k.textContent = KIND_NAME[rounds[r.index]?.kind] ?? '';
-    d.append(c, s, n, k); strip.append(d);
+    d.append(s, c, n, k); strip.append(d);
   }
   go('score');
 }
