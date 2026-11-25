@@ -3,3 +3,5 @@ dist
 test-results
 playwright-report
 public/fonts/Satoshi-Variable.woff2
+
+media-work/

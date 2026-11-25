@@ -97,7 +97,7 @@ Fairness is a design problem before it is a scoring problem: the moment players 
 ---
 
 ## Testing instructions for judges
-1. Play online: [hosted demo URL, after you approve a deploy].
+1. Play online: https://yasharyas.github.io/fogtrack/ (board: /fogtrack/board.html).
 2. Or run locally: `npm install`, `npm run build`, `npm run preview`, then open `http://localhost:4173/` (game) and `http://localhost:4173/board.html` (leaderboard) in two windows. Put the board on a second monitor for the booth setup.
 3. On the board, press Ctrl+Shift+O for the operator panel.
 4. Tests: `npm test` (unit), `npm run e2e` (browser), `SOAK=1 npx playwright test tests/soak` (150-session soak, about 17 minutes).
@@ -111,6 +111,6 @@ Link: `AI_SHOWCASE.md` in the repo [DO FIRST: write it after the JetBrains work]
 5. What AI got wrong and how we caught it (the random-turn fairness bug).
 
 ## Links
-- Public repo with LICENSE shown in About: [you create the repo; I push on your go-ahead]
-- Working build: [hosted demo, on your go-ahead]
-- YouTube video, public, under 3 minutes: [from VIDEO_SCRIPT.md]
+- Public repo: https://github.com/yasharyas/fogtrack
+- Working build: https://yasharyas.github.io/fogtrack/
+- YouTube video (2:07, currently unlisted; set to Public before submitting): https://youtu.be/cEWr-bNkSpo

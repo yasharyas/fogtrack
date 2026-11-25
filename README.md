@@ -6,6 +6,15 @@ Watch the dots. The fog drops. Tap where they are now.
 
 Entry for Cloud9 x JetBrains: Sky's The Limit, Category 3 (Event Mini Game).
 
+- **Play it:** https://yasharyas.github.io/fogtrack/ (leaderboard for a second monitor: https://yasharyas.github.io/fogtrack/board.html)
+- **Demo video (2:07):** https://youtu.be/cEWr-bNkSpo
+
+![Fogtrack gameplay: dots move, fog drops, pins placed, truth revealed](docs/preview.gif)
+
+| Score screen | Second-monitor leaderboard |
+|---|---|
+| ![Score screen with total, Track and Read bars and per-round bars](docs/score.png) | ![Leaderboard with today and all-time top 10](docs/board.png) |
+
 ## How it plays
 1. **Watch.** Orange opponent dots cross a top-down site plan for 2.5 seconds.
 2. **Fog.** Fog falls and the clock jumps ahead 1.5 to 3 seconds.
