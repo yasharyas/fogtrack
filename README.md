@@ -36,4 +36,4 @@ Eight rounds get harder: runner, turner, stopper, two dots, a dot that doubles b
 TypeScript, Vite, Canvas 2D. No runtime dependencies. See SUBMISSION.md for which JetBrains tools were used and for what.
 
 ## Licence
-MIT for the code. JetBrains Mono (SIL OFL) is bundled in `public/fonts`. Satoshi is under the ITF Free Font License, which forbids redistribution, so it is not in this repo: download it free from fontshare.com/fonts/satoshi and place `Satoshi-Variable.woff2` in `public/fonts`. Without it the game falls back to a plain sans-serif.
+MIT for the code. JetBrains Mono (SIL OFL) is bundled in `public/fonts`. Satoshi is under the ITF Free Font License, which forbids redistribution, so it is not in this repo: `npm run build` fetches it from Fontshare automatically (scripts/fetch-font.mjs). Without network access the game falls back to a plain sans-serif.
